@@ -29,7 +29,6 @@ const { data, error } = await useGraphqlQuery({ query: QUERY });
 
 <template>
     <main>
-        {{ data.allProjects[0].labels}}
         <Header />
         <section class="call-to-action-container">
             <span>-- {{ data.calltoaction.smallText }}</span>
@@ -38,7 +37,7 @@ const { data, error } = await useGraphqlQuery({ query: QUERY });
             <a :href="data.calltoaction.contact">Contact</a>
         </section>
             
-        <section class="project-container">
+        <section class="projects-container">
             <h2>My projects</h2>
             <Project v-for="project in data.allProjects" :title="project.title"
                 :description="project.description" :url="project.mockupImage.url" 
@@ -75,7 +74,7 @@ section a {
 }
 
 /* projects */
-.project-container h2 {
+.projects-container h2 {
     margin-bottom: 0.5em;
 }
 </style>

@@ -22,6 +22,10 @@ defineProps({
 </template>
 
 <style scoped>
+section{
+    margin-bottom: 5.5em;
+}
+
 img {
     padding: 0 1em;
     background-color: v-bind('backgroundColor');

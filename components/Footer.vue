@@ -3,8 +3,8 @@
         <h2>Get in touch</h2>
         <span>tolgadoganer@outlook.com</span>
         <div class="links-container">
-            <a><img src="/assets/icons/linkedinLogoWhite.svg" alt="linkedIn logo">Linkedin</a>
-            <a><img src="/assets/icons/githubLogoWhite.svg" alt="github logo">Github</a>
+            <a href="https://www.linkedin.com/in/tolga-doganer-1b76aa161/"><img src="/assets/icons/linkedinLogoWhite.svg" alt="linkedIn logo">Linkedin</a>
+            <a href="https://github.com/Tolga1999"><img src="/assets/icons/githubLogoWhite.svg" alt="github logo">Github</a>
         </div>
     </footer>
 </template>
@@ -14,7 +14,7 @@ footer{
     background-color: var(--primary-color);
     padding: 2.5em;
     padding-top: 3.5em;
-    margin-top: 4em;
+    /* margin-top: 4em; */
 }
 
 h2, span{
