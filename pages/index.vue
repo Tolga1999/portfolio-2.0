@@ -25,7 +25,7 @@
 }
 
 .call-to-action-container p{
-    line-height: 2em;
+    line-height: 1.6em;
     margin-bottom: 0.75em;
     font-size: 1.25em;
 }
