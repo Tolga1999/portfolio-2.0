@@ -1,21 +1,30 @@
+<script setup>
+defineProps({
+  title: String,
+  description: String,
+  url: String,
+  backgroundColor: String,
+  linkProject: String,
+  labels: Object,
+});
+</script>
+
 <template>
     <section>
-        <img src="assets/images/vervoerregioAmsterdam.svg" alt="Vervoerregio Amsterdam">
-        <h3>Toolgankelijkheid - Vervoerregio Amsterdam</h3>
-        <span>Design</span>
-        <span>Frontend</span>
+        <img :src="url" alt="Vervoerregio Amsterdam">
+        <h3>{{ title }}</h3>
+        <span v-for="label in labels">{{ label }}</span>
         <p>
-            Project for Vervoerregio Amsterdam focusing on WCAG guidelines and the specific check ups between their
-            partners. This project is built with a unique design, Sveltekit, and Hygraph CMS.
+            {{ description }}
         </p>
-        <a href="/">See more</a>
+        <a :href=linkProject>See more</a>
     </section>
 </template>
 
 <style scoped>
 img {
     padding: 0 1em;
-    background-color: #DE0058;
+    background-color: v-bind('backgroundColor');
     border-radius: 1em;
     width: 100%;
 }

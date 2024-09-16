@@ -1,4 +1,4 @@
-// functie dat de fetch doet naar dato
+// composable that does retrieves data with useFetch() - https://www.datocms.com/docs/nuxt#fetching-contents-from-our-graphql-api
 export default (options) => {
   const { query, variables = {} } = options;
   const runtimeConfig = useRuntimeConfig();

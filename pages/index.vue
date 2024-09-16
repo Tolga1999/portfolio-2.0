@@ -1,15 +1,25 @@
 <script setup>
 const QUERY = `
   query {
-  allCalltoactions {
-    id
+  calltoaction{
+    smallText
     title
-    _status
-    _firstPublishedAt
+    paragraph
+    contact
   }
-
-  _allCalltoactionsMeta {
-    count
+    
+  allProjects{
+    title
+    mockupImage {
+      filename
+      url
+    }
+    backgroundColor {
+      hex
+    }
+    labels
+    description
+    linkToProject
   }
 }
 `;
@@ -19,22 +29,20 @@ const { data, error } = await useGraphqlQuery({ query: QUERY });
 
 <template>
     <main>
+        {{ data.allProjects[0].labels}}
         <Header />
-        <p>{{ data }}</p>
         <section class="call-to-action-container">
-            <span>-- Hi I'm Tolga</span>
-            <h1>Frontend Developer</h1>
-            <p>
-                Hello! My name is Tolga, I’m 24 years old and I like to design and code projects in Vue.js, Sveltekit
-                and
-                Nuxt.js. I recently graduated at the Amsterdam University of Applied Sciences! 🎉
-            </p>
-            <a href="/">Contact</a>
+            <span>-- {{ data.calltoaction.smallText }}</span>
+            <h1>{{ data.calltoaction.title }}</h1>
+            <p>{{ data.calltoaction.paragraph }}</p>
+            <a :href="data.calltoaction.contact">Contact</a>
         </section>
-
+            
         <section class="project-container">
             <h2>My projects</h2>
-            <Project />
+            <Project v-for="project in data.allProjects" :title="project.title"
+                :description="project.description" :url="project.mockupImage.url" 
+                :backgroundColor="project.backgroundColor.hex" :linkProject="project.linkToProject" :labels="project.labels"/>
         </section>
     </main>
     <Footer />
