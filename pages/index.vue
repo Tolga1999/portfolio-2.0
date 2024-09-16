@@ -1,11 +1,32 @@
+<script setup>
+const QUERY = `
+  query {
+  allCalltoactions {
+    id
+    title
+    _status
+    _firstPublishedAt
+  }
+
+  _allCalltoactionsMeta {
+    count
+  }
+}
+`;
+
+const { data, error } = await useGraphqlQuery({ query: QUERY });
+</script>
+
 <template>
     <main>
         <Header />
+        <p>{{ data }}</p>
         <section class="call-to-action-container">
             <span>-- Hi I'm Tolga</span>
             <h1>Frontend Developer</h1>
             <p>
-                Hello! My name is Tolga, I’m 24 years old and I like to design and code projects in Vue.js, Sveltekit and
+                Hello! My name is Tolga, I’m 24 years old and I like to design and code projects in Vue.js, Sveltekit
+                and
                 Nuxt.js. I recently graduated at the Amsterdam University of Applied Sciences! 🎉
             </p>
             <a href="/">Contact</a>
@@ -24,19 +45,19 @@
     margin: 3.875em 0 4.75em 0;
 }
 
-.call-to-action-container p{
+.call-to-action-container p {
     line-height: 1.6em;
     margin-bottom: 0.75em;
     font-size: 1.25em;
 }
 
-span{
+span {
     color: var(--tertiary-text-color);
     font-weight: 500;
 }
 
 /* styling for section anchors */
-section a{
+section a {
     display: inline-block;
     color: var(--secondary-color);
     background-color: var(--primary-color);
@@ -46,7 +67,7 @@ section a{
 }
 
 /* projects */
-.project-container h2{
+.project-container h2 {
     margin-bottom: 0.5em;
 }
 </style>
