@@ -37,8 +37,8 @@ const { data, error } = await useGraphqlQuery({ query: QUERY });
             <a :href="data.calltoaction.contact">Contact</a>
         </section>
             
+        <h2 class="projects-h2">My projects</h2>
         <section class="projects-container">
-            <h2>My projects</h2>
             <Project v-for="project in data.allProjects" :title="project.title"
                 :description="project.description" :url="project.mockupImage.url" 
                 :backgroundColor="project.backgroundColor.hex" :linkProject="project.linkToProject" :labels="project.labels"/>
@@ -50,6 +50,7 @@ const { data, error } = await useGraphqlQuery({ query: QUERY });
 <style>
 .call-to-action-container {
     margin: 3.875em 0 4.75em 0;
+    max-width: 40em;
 }
 
 .call-to-action-container p {
@@ -74,7 +75,36 @@ section a {
 }
 
 /* projects */
-.projects-container h2 {
+.projects-h2 {
     margin-bottom: 0.5em;
+}
+
+.projects-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3.25em;
+    flex-grow: 1;
+  }
+
+/* media queries for desktop */
+@media screen and (min-width: 800px) {
+  h1{
+    font-size: 4em;
+  }
+
+  h2{
+    font-size: 3em;
+  }
+
+  h3{
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  main {
+    margin-left: 14em;
+    margin-right: 14em;
+  }
 }
 </style>

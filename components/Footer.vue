@@ -46,5 +46,18 @@ a{
     border-radius: 0.5em;
     gap: 0.5em;
     font-weight: 500;
+    text-decoration: none;
+}
+
+@media screen and (min-width: 1100px) {
+
+  footer{
+    padding-left: 14em;
+    padding-right: 14em;
+  }
+
+  h2{
+    font-size: 4em
+  }
 }
 </style>

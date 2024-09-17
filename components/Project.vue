@@ -23,7 +23,8 @@ defineProps({
 
 <style scoped>
 section{
-    margin-bottom: 5.5em;
+    margin-bottom: 3.5em;
+    max-width: 30em;
 }
 
 img {
