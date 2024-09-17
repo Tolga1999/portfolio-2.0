@@ -3,6 +3,7 @@ defineProps({
   title: String,
   description: String,
   url: String,
+  alt: String,
   backgroundColor: String,
   linkProject: String,
   labels: Object,
@@ -11,7 +12,7 @@ defineProps({
 
 <template>
     <section>
-        <img :src="url" alt="Vervoerregio Amsterdam">
+        <img :src="url" :alt="alt">
         <h3>{{ title }}</h3>
         <span v-for="label in labels">{{ label }}</span>
         <p>

@@ -13,6 +13,7 @@ const QUERY = `
     mockupImage {
       filename
       url
+      alt
     }
     backgroundColor {
       hex
@@ -40,7 +41,7 @@ const { data, error } = await useGraphqlQuery({ query: QUERY });
         <h2 class="projects-h2">My projects</h2>
         <section class="projects-container">
             <Project v-for="project in data.allProjects" :title="project.title"
-                :description="project.description" :url="project.mockupImage.url" 
+                :description="project.description" :url="project.mockupImage.url" :alt="project.mockupImage.alt" 
                 :backgroundColor="project.backgroundColor.hex" :linkProject="project.linkToProject" :labels="project.labels"/>
         </section>
     </main>
