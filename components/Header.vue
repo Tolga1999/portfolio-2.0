@@ -34,17 +34,17 @@ ul li:nth-of-type(1) {
     font-size: 1.5em;
 }
 
-ul li a:nth-of-type(1){
+ul li a:nth-of-type(1) {
     color: var(--primary-color);
     font-weight: 500;
     text-decoration: none;
 }
 
-ul li:nth-of-type(2){
+ul li:nth-of-type(2) {
     margin-right: 1.25em;
 }
 
-ul li a{
+ul li a {
     display: flex;
     align-items: center;
 }

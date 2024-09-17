@@ -1,12 +1,12 @@
 <script setup>
 defineProps({
-  title: String,
-  description: String,
-  url: String,
-  alt: String,
-  backgroundColor: String,
-  linkProject: String,
-  labels: Object,
+    title: String,
+    description: String,
+    url: String,
+    alt: String,
+    backgroundColor: String,
+    linkProject: String,
+    labels: Object,
 });
 </script>
 
@@ -23,7 +23,7 @@ defineProps({
 </template>
 
 <style scoped>
-section{
+section {
     margin-bottom: 3.5em;
     max-width: 30em;
 }
@@ -52,7 +52,7 @@ span {
     margin-top: 1em;
 }
 
-p{
+p {
     color: var(--tertiary-text-color);
     line-height: 1.5em;
     margin: 1em 0;
